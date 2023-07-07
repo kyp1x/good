@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Banned Profile</title>
+  <style>
+    body {
+      background-color: #111111;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #222222;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #ff0000;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    
+    .go-back-button {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .go-back-button button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .go-back-button button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Warn.webp" alt="Logo" class="logo">
+    <h1>Oops!</h1>
+    <p>This profile has been banned.</p>
+    <p>For violating our Terms of use or Terms of service, this person is now vanished from here.</p>
+    
+    <div class="go-back-button" id="goBackButtonContainer">
+      <button onclick="goBack()">Go Back</button>
+    </div>
+  </div>
+  
+  <script>
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

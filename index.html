@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="tab-title">Kyp1x's Social Media Site</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/png" href="androd.png">
+  <style>
+    /* Add custom CSS styles here */
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("SocialLinkWallpaper.gif"); /* Set the background image */
+      background-repeat: repeat; /* Adjust the repeat value as per your preference */
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    .rainbow-header {
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 200% auto;
+      animation: rainbow 10s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    nav {
+      background-color: #555;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    section {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-link {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      color: #fff;
+      background-color: #333;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-link i {
+      font-size: 24px;
+    }
+
+    .social-link img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    .social-link:hover {
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #555;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    button#rainbow-toggle {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button#rainbow-toggle:hover {
+      background-color: #555;
+    }
+
+    button#dark-mode-toggle {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Custom button styles */
+    .made-by-kyp1x-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 9999;
+    }
+
+    .made-by-kyp1x-button:hover {
+      background-color: #555;
+    }
+  </style>
+  <script src="script.js"></script>
+  <script>
+    function toggleRainbowHeader() {
+      const header = document.querySelector('header');
+      header.classList.toggle('rainbow-header');
+    }
+
+    // Embed YouTube video
+    function embedYouTubeVideo() {
+      const videoContainer = document.getElementById('youtube-video');
+      const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; // Replace with your YouTube video ID
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.width = '560';
+      iframe.height = '315';
+      iframe.frameborder = '0';
+      iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowfullscreen = true;
+
+      videoContainer.appendChild(iframe);
+    }
+
+    // Call the function to embed the YouTube video
+    embedYouTubeVideo();
+
+    // Generate random title
+    function generateRandomTitle() {
+      const symbols = '!@#$%^&*()';
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      const numbers = '0123456789';
+
+      let title = 'a';
+
+      for (let i = 0; i < 10; i++) {
+        const randomType = Math.floor(Math.random() * 3);
+
+        if (randomType === 0) {
+          const randomSymbol = symbols.charAt(Math.floor(Math.random() * symbols.length));
+          title += randomSymbol;
+        } else if (randomType === 1) {
+          const randomLetter = letters.charAt(Math.floor(Math.random() * letters.length));
+          title += randomLetter;
+        } else {
+          const randomNumber = numbers.charAt(Math.floor(Math.random() * numbers.length));
+          title += randomNumber;
+        }
+      }
+
+      document.getElementById('tab-title').innerHTML = title;
+      document.title = title; // Set the tab title
+    }
+
+    // Call the function to generate a random title
+    generateRandomTitle();
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Kyp1x</h1>
+    <button id="rainbow-toggle" onclick="toggleRainbowHeader()">Toggle Rainbow Header</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.htm">Profile</a></li>
+      <li><a href="friends.html">Friends</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="logout.html">Logout</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="wallpaper.html">Wallpaper</a></li>
+      <li><a href="windowsxp.html">WindowsXP</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+      <li><a href="Lmdos7.html">Download assets!</a></li>
+      <li><a href="biosupdate.html">Download website!</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>I'm Kyp1xx, a passionate modder and advocate for a better online experience. I specialize in creating mods, blocking intrusive ads, and more. With my expertise, I strive to enhance the gaming community and empower users to have full control of their online experience by eliminating intrusive ads and creating a cleaner and more enjoyable digital environment.</p>
+      <p>Through my connections in the modding community, I have worked with various games and enthusiasts to bring innovative and game-changing modifications to popular games. My dedication to improving the user experience has led me to work on projects involving HTML, CSS, JavaScript, Python, and more.</p>
+      <p>Feel free to connect with me through the social media links below. Together, we can make the online world a better place!</p>
+      <p>I use Luckypatcher for mobile purposes and Cheat engine and injectors for computer purposes. I use windows 10 and a Samsung S21+</p>
+      
+      <div class="social-links">
+        <a href="https://www.youtube.com/@Pix3lGun3D" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.youtube.com/@kyp1x" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="https://dsc.gg/kyp1xx" class="social-link"><i class="fab fa-discord"></i></a>
+        <a href="https://twitter.com/Kyp1x12911" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="https://open.spotify.com/user/31eehle6p4f6alvpmrtwb7vf6nfa" class="social-link"><i class="fab fa-spotify"></i></a>
+        <a href="https://www.tiktok.com/@smailpreston" class="social-link"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.roblox.com/users/5079387/profile" class="social-link"><img src="roblox-logo.png" alt="Roblox Logo"></a>
+        <a href="https://steamcommunity.com/id/smally2/" class="social-link"><i class="fab fa-steam"></i></a>
+        <a href="https://replit.com/@kyp1xx" class="social-link"><img src="replit.png" alt="Replit"></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Latest YouTube Video</h2>
+      <div id="youtube-video"></div>
+      <img src="bth.webp" alt="BTH Image">
+    </section>
+
+    <section>
+      <h2>Favorite YouTuber</h2>
+      <a href="https://www.youtube.com/@qzeq" class="social-link"><i class="fab fa-youtube"></i></a>
+      <p>Check out QzeQ on YouTube for awesome gaming content, tutorials, and more!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Kyp1x's Social Media Site. All rights reserved. | <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <button class="made-by-kyp1x-button" onclick="location.href='credits.html'">Made by kyp1x</button>
+</body>
+</html>

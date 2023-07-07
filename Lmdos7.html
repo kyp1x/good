@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Buttons</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f7f7f7;
+      padding: 50px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 48px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      background: linear-gradient(to bottom, #6c63ff, #8f82ff);
+      color: #fff;
+      border-radius: 50px;
+      transition: background-color 0.3s, transform 0.3s;
+      margin: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: none;
+      outline: none;
+    }
+
+    .button:hover {
+      background: linear-gradient(to bottom, #8f82ff, #6c63ff);
+      transform: scale(1.05);
+    }
+
+    p {
+      margin-top: 50px;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    /* Additional CSS Styles */
+    
+    /* Container Styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    
+    /* Button Wrapper Styles */
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Large Button Styles */
+    .button.large {
+      padding: 30px 60px;
+      font-size: 32px;
+    }
+    
+    /* Primary Button Styles */
+    .button.primary {
+      background-color: #4CAF50;
+    }
+    
+    /* Secondary Button Styles */
+    .button.secondary {
+      background-color: #FF4081;
+    }
+    
+    /* Success Button Styles */
+    .button.success {
+      background-color: #00C853;
+    }
+    
+    /* Danger Button Styles */
+    .button.danger {
+      background-color: #F44336;
+    }
+    
+    /* Warning Button Styles */
+    .button.warning {
+      background-color: #FFC107;
+    }
+    
+    /* Info Button Styles */
+    .button.info {
+      background-color: #00BCD4;
+    }
+    
+    /* Hover Effect Styles */
+    .button:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Active Effect Styles */
+    .button:active {
+      transform: scale(0.95);
+    }
+    
+    /* Focus Styles */
+    .button:focus {
+      outline: none;
+    }
+    
+    /* Disabled Button Styles */
+    .button:disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    /* Additional Button Styles */
+    .button.extra-1 {
+      background-color: #FF9800;
+    }
+    
+    .button.extra-2 {
+      background-color: #E91E63;
+    }
+    
+    .button.extra-3 {
+      background-color: #2196F3;
+    }
+    
+    .button.extra-4 {
+      background-color: #9C27B0;
+    }
+    
+    .button.extra-5 {
+      background-color: #795548;
+    }
+    
+    /* Additional Hover Effect */
+    .button.extra:hover {
+      transform: rotate(360deg);
+    }
+    
+    /* Additional Active Effect */
+    .button.extra:active {
+      transform: scale(0.9) rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Download Buttons</h1>
+    <div class="button-wrapper">
+      <button class="button primary" onclick="downloadFile('nocmdforyou.exe')">Download Backup CMD</button>
+      <button class="button secondary" onclick="downloadFile('as.txt')">Download Windows XP Keys</button>
+      <button class="button success" onclick="downloadFile('BackupcmdPack.zip')">Download BackupCMD Pack</button>
+      <button class="button danger" onclick="downloadFile('danger.bin')">Download Data File</button>
+      <button class="button warning" onclick="downloadFile('oof!.png')">Download Oof!</button>
+      <button class="button info" onclick="downloadFile('Lmdos7.html')">Download Website</button>
+      <button class="button extra extra-1" onclick="downloadFile('maintenance-image.png')">Download maintenacne image</button>
+      <button class="button extra extra-2" onclick="downloadFile('replit.png')">Download replit logo</button>
+      <button class="button extra extra-3" onclick="downloadFile('roblox-logo.png')">Download roblox logo</button>
+      <button class="button extra extra-4" onclick="downloadFile('SocialLinkWallpaper.gif')">Download wallpaper</button>
+    </div>
+    <p>No, these files aren't viruses. If nocmdforyou.exe gets detected with WacatackB!ML or anything, don't get scared. It's not a virus. The file was made with "OpenAI" or "ChatGPT." It may be flagged by some antivirus programs because I'm not a trusted developer yet. I'm working on it to become one. Thanks for your understanding. Your antivirus may give a false positive, but it works fine.</p>
+  </div>
+
+  <script>
+    function downloadFile(fileUrl) {
+      // Create an invisible element to trigger the download
+      var link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = fileUrl.split('/').pop();
+      link.style.display = 'none';
+      document.body.appendChild(link);
+
+      // Simulate a click event to trigger the download
+      link.click();
+
+      // Clean up
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>

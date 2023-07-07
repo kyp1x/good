@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News Feed</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Add custom CSS styles here */
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    .rainbow-header {
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 200% auto;
+      animation: rainbow 10s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    nav {
+      background-color: #555;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .news-item {
+      margin-bottom: 20px;
+    }
+
+    .news-item h3 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .news-item p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .news-item .date {
+      color: #999;
+      font-size: 12px;
+    }
+
+    footer {
+      background-color: #555;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>News Feed</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="friends.html">Friends</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="news-item">
+      <h3>Oof!</h3>
+      <p>Stuff broke, including latest youtube video.</p>
+      <p class="date">Published on June 17, 2023</p>
+    </section>
+
+    <section class="news-item">
+      <h3>Tech errors.</h3>
+      <p>Downtime!</p>
+      <p class="date">Published on June 17, 2023</p>
+    </section>
+
+    <section class="news-item">
+      <h3>No fixes!</h3>
+      <p>Latest Youtube video not fixed</p>
+      <p class="date">Published on June 12, 2023</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Kyp1xx. All rights reserved.</p>
+  </footer>
+</body>
+</html>

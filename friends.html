@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .friends-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .friend-list {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .friend-list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .friend-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .friend-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .go-back-button {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .go-back-button button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .go-back-button button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="friends-container">
+    <h1>Friends</h1>
+    <ul class="friend-list">
+      <li class="friend-list-item" onclick="goToProfile('friend1')">
+        <img src="oof!.png" alt="Friend 1" class="friend-avatar">
+        <span class="friend-name">Kyp1x</span>
+      </li>
+      <li class="friend-list-item" onclick="goToProfile('friend2')">
+        <img src="oof!.png" alt="Friend 2" class="friend-avatar">
+        <span class="friend-name">John Doe</span>
+      </li>
+      <li class="friend-list-item" onclick="goToProfile('friend3')">
+        <img src="oof!.png" alt="??" class="friend-avatar">
+        <span class="friend-name">LinuxHacker</span>
+      </li>
+      <!-- Add more friend list items as needed -->
+    </ul>
+    
+    <div class="go-back-button" id="goBackButtonContainer"></div>
+    
+  </div>
+  
+  <script>
+    function goToProfile(friend) {
+      // Replace the URL with the appropriate profile page URL for each friend
+      if (friend === 'friend1') {
+        location.href = 'kyp1x.html';
+      } else if (friend === 'friend2') {
+        location.href = 'johndoe.html';
+      } else if (friend === 'friend3') {
+        location.href = 'linuxhacker.html';
+      }
+    }
+    
+    // Function to create the "Go Back" button
+    function createGoBackButton() {
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      // Check if the user is on a mobile device
+      if (isMobile) {
+        var mobileButton = document.createElement("button");
+        mobileButton.innerHTML = "Go Back";
+        mobileButton.onclick = function() {
+          location.href = "mobile.html"; // Replace with the appropriate mobile page URL
+        };
+        
+        document.getElementById("goBackButtonContainer").appendChild(mobileButton);
+      } else {
+        var desktopButton = document.createElement("button");
+        desktopButton.innerHTML = "Go Back";
+        desktopButton.onclick = function() {
+          location.href = "index.html"; // Replace with the appropriate desktop page URL
+        };
+        
+        document.getElementById("goBackButtonContainer").appendChild(desktopButton);
+      }
+    }
+    
+    // Call the function to create the "Go Back" button
+    createGoBackButton();
+  </script>
+</body>
+</html>

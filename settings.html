@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Add custom CSS styles here */
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    .rainbow-header {
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 200% auto;
+      animation: rainbow 10s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    nav {
+      background-color: #555;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-label span {
+      margin-left: 10px;
+    }
+
+    footer {
+      background-color: #555;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .dark-mode {
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      const body = document.querySelector('body');
+      const footer = document.querySelector('footer');
+
+      body.classList.toggle('dark-mode');
+      footer.classList.toggle('dark-mode');
+
+      // Update URL hash based on dark mode state
+      const isDarkMode = body.classList.contains('dark-mode');
+      window.location.hash = isDarkMode ? 'darkmode' : '';
+    }
+
+    // Check URL hash on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash === '#darkmode') {
+        toggleDarkMode();
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Settings</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="friends.html">Friends</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Appearance</h2>
+      <div class="toggle-label">
+        <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span>Dark Mode</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Settings. All rights reserved.</p>
+  </footer>
+</body>
+</html>

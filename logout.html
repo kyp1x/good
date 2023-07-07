@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code: Knock knock</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+/* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("SocialLinkWallpaper.gif"); /* Set the background image */
+      background-repeat: repeat; /* Adjust the repeat value as per your preference */
+      color: #333;
+    
+    .logout-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logout-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logout-form label {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .logout-form input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logout-form input[type="submit"] {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function logout() {
+      var code = document.getElementById("code").value;
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (code === "Knock knock") {
+        if (isMobile) {
+          window.location.href = "mobile.html";
+        } else {
+          window.location.href = "index.html";
+        }
+      } else {
+        alert("Incorrect code. Please try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="logout-container">
+    <h1>Logout</h1>
+    <form class="logout-form" onsubmit="logout(); return false;">
+      <label for="code">Enter the code:</label>
+      <input type="text" id="code" required>
+      <input type="submit" value="Logout">
+    </form>
+  </div>
+</body>
+</html>
